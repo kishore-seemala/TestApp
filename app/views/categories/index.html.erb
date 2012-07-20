@@ -1,0 +1,15 @@
+<h2>Categories</h2>
+
+<%= link_to "Create New Category", new_category_path %>
+
+<hr />
+
+<% @categories.each do |cat| %>
+ 
+   <div style="padding : 10px; margin: 10px; background-color:#23ffef; border: 2px solid #aaa">
+
+      <strong><%= cat.category %></strong>   <%= link_to "edit category", edit_category_path(cat) %> | 
+      <%= link_to "Delete Category", category_path(cat), :method => :delete, :data => {:confirm => "Are you sure?"}%>  
+   </div>
+
+<% end %>
